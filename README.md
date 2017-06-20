@@ -11,7 +11,7 @@ Read and modify
 
 [1, 2, 3].tap(t => t.push(4)) -> [1, 2, 3, 4]
 ```
-
+source:
 ```js
 Object.prototype.tap = function (func) {
 	return func(this), this
@@ -23,7 +23,7 @@ Object.prototype.tap = function (func) {
 ```js
 [1, 2, 3].first() -> 1
 ```
-
+source:
 ```js
 Array.prototype.first = function () {
   return this[0]
@@ -35,7 +35,7 @@ Array.prototype.first = function () {
 ```js
 [1, 2, 3].last() -> 3
 ```
-
+source:
 ```js
 Array.prototype.last = function () {
 	return this[this.length - 1]
@@ -49,7 +49,7 @@ Push and return
 [1, 2, 3].push(4) -> 3 // it's index
 [1, 2, 3].pusher(4) -> [1, 2, 3, 4]
 ```
-
+source:
 ```js
 Array.prototype.pusher = function (data) {
 	this.push(data)
@@ -69,7 +69,7 @@ Clear array
 ```js
 [1, null, 3, undefined, 5].compact() -> [1, 3, 5]
 ```
-
+source:
 ```js
 Array.prototype.compact = function () {
 	return this.reduce((newArray, current) => {
@@ -85,7 +85,7 @@ Repeat `N` times
 3..times(i => console.log(i)) -> 1 / 2 / 3
 (3).times((i, total) => alert(i)) -> 1 / 2 / 3
 ```
-
+source:
 ```js
 Number.prototype.times = function (func) {
 	for (let i = 0; i < this.valueOf(); i++) func(i, this.valueOf())
