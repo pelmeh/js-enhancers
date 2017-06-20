@@ -14,7 +14,7 @@ Read and modify
 source:
 ```js
 Object.prototype.tap = function (func) {
-	return func(this), this
+  return func(this), this
 }
 ```
 
@@ -38,7 +38,7 @@ Array.prototype.first = function () {
 source:
 ```js
 Array.prototype.last = function () {
-	return this[this.length - 1]
+  return this[this.length - 1]
 }
 ```
 
@@ -52,14 +52,14 @@ Push and return
 source:
 ```js
 Array.prototype.pusher = function (data) {
-	this.push(data)
-	return this
+  this.push(data)
+  return this
 }
 ```
 or with `Object.Tap` depency
 ```js
 Array.prototype.pusher = function (data) {
-	return this.tap(t => t.push(data))
+  return this.tap(t => t.push(data))
 }
 ```
 
@@ -72,10 +72,10 @@ Clear array
 source:
 ```js
 Array.prototype.compact = function () {
-	return this.reduce((newArray, current) => {
-		if (current !== undefined && current !== null) newArray.push(current)
-		return newArray
-	}, [])
+  return this.reduce((newArray, current) => {
+    if (current !== undefined && current !== null) newArray.push(current)
+    return newArray
+  }, [])
 }
 ```
 ### Number.Times
@@ -88,6 +88,6 @@ Repeat `N` times
 source:
 ```js
 Number.prototype.times = function (func) {
-	for (let i = 0; i < this.valueOf(); i++) func(i, this.valueOf())
+  for (let i = 0; i < this.valueOf(); i++) func(i, this.valueOf())
 }
 ```
